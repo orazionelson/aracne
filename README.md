@@ -16,6 +16,6 @@ immissione dei documenti con un editor XML dedicato;
 
 Per raggiungere questi obbiettivi è stato scritto un set di librerie in xql che interagiscono e si integrano con diversi strumenti JavaScript Open Source.
 
-Per maggiori inormazioni sull'installazione leggere la documentazione nella cartella **doc/**
+Per maggiori informazioni sull'installazione leggere la documentazione nella cartella **doc/**
 
 Aracne è rilasciato con licenza LGPL: https://www.gnu.org/licenses/lgpl-3.0.en.html
