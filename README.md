@@ -1,4 +1,4 @@
-![Aracne Logo](/home/igor/Dropbox/00_Aragonesi_PAPER/aracne_git/icon.png  "Aracne Logo")<h1>Aracne</h1>
+![Aracne Logo](icon.png  "Aracne Logo")<h1>Aracne</h1>
 **versione 1.0**
 
 di Alfredo Cosco alfredo.cosco@gmail.com
