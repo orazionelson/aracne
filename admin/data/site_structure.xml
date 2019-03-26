@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <template required="true">
+        <name>homePage</name>
+        <label>Home Page</label>
+        <proto>paragtitle</proto>
+        <proto>textarea</proto>
+        <proto>table</proto>
+		<!--proto>TODO:img</proto-->
+        <tool>autoToc</tool>
+        <help>
+            <p>The homePage page template ...</p>
+        </help>
+    </template>
+    <template required="false">
+        <name>bibliography</name>
+        <label>Bibliography</label>
+        <proto>paragtitle</proto>
+        <proto>textarea</proto>
+        <proto>citation</proto>
+        <tool>autoToc</tool>
+		<!--tool>TODO:freeTextFilter</tool>
+		<tool>TODO:timeLine</tool-->
+        <help>
+            <p>The Bibliography page template ...</p>
+        </help>
+    </template>
+    <template required="false">
+        <name>credits</name>
+        <label>Credits</label>
+        <proto>paragtitle</proto>
+        <proto>textarea</proto>
+        <help>
+            <p>The Credits page template ...</p>
+        </help>
+    </template>
+    <template required="false">
+        <name>addendum</name>
+        <label>Addendum</label>
+        <proto>paragtitle</proto>
+        <proto>textarea</proto>
+        <proto>table</proto>
+        <tool>autoToc</tool>
+		<!--tool>TODO:notes</tool-->
+        <help>
+            <p>The Addendum page template ...</p>
+        </help>
+    </template>
+    <template required="false">
+        <name>freeText</name>
+        <label>Free Text</label>
+        <proto>paragtitle</proto>
+        <proto>textarea</proto>
+        <proto>table</proto>
+        <tool>autoToc</tool>
+        <help>
+            <p>The free-text page template ...</p>
+        </help>
+    </template>
+    <interface required="false">
+        <name>browse</name>
+        <label>Browse</label>
+        <proto>browse</proto>
+        <help>
+            <p>The browse interface ...</p>
+        </help>
+    </interface>
+    <interface required="true">
+        <name>search</name>
+        <label>Search</label>
+        <help>
+            <p>The search interface...</p>
+        </help>
+    </interface>
+</items>

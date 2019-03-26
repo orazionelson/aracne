@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="templates:surround?with=templates/page.html&amp;at=content">
+    <section class="content-header">
+        <h1>
+            Collections
+        </h1>
+        <div data-template="adminapp:collection-button-create"/>
+        <!--p class="text-center">
+            <div data-template="app:edit-toc"/>
+        </p-->
+        <!--a class="btn btn-primary" href="crea.html">Crea nuovo</a-->
+        <div class="panel panel-default build_response_box"/>
+    </section>
+    <section id="collections" class="content">
+        <table id="collections-list" data-page-length="50" data-order="[[ 0, &#34;asc&#34; ]]" class="table table-striped table-hover data-table">
+            <thead>
+                <tr>
+                    <th class="collection-id-column">id</th>
+                    <th>Title</th>
+                    <th>Documents number</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <span data-template="adminapp:collections"/>
+            </tbody>
+        </table>
+    </section>
+    <script>
+        $(document).ready(function() {
+            $('#collections-list').DataTable({
+                columnDefs: [{ type: 'natural', targets: 0 },
+                    { targets: 5, orderable: false }
+                ],
+                "oLanguage": {"sSearch": "Filtra per testo libero:"},
+                });
+
+        $('.collection_build').on('click', function(e){
+            e.preventDefault();
+            var url=$(this).attr('href');
+            $('.build_response_box').empty().append('<span>
+            <img style="width:30px;" src="resources/img/ringred.gif"/>
+        </span>');
+            $.ajax({
+            url: url,
+            method: "GET",
+            cache: false
+            })
+        .done(function( html ) {
+
+            $('.build_response_box').empty().append(html);//.find('.release_button_box'));
+
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            var error = '<div data-score="1" class="text-danger">error</div>';
+            $('.build_response_box' ).append( error );
+            
+        });
+            
+        });
+            
+        });
+        </script>
+</div>

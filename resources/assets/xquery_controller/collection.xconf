@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://exist-db.org/collection-config/1.0">
+    <index xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <fulltext default="none" attributes="false"/>
+        <lucene>
+            <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer">
+                <param name="stopwords" type="org.apache.lucene.analysis.util.CharArraySet">
+                    <value>ed</value>
+                </param>
+            </analyzer>
+            <analyzer id="kw" class="org.apache.lucene.analysis.core.KeywordAnalyzer"/>
+            <text qname="tei:summary"/>
+            <text qname="tei:div"/>
+        </lucene>
+    </index>
+</collection>

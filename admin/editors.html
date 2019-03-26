@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
+    <section class="content-header">
+        <h1>Manage editors</h1>
+    </section>
+    <section id="editors" class="content">
+        <div class="well well-sm text-center">
+            <p class="lead text-danger">
+                <span data-template="adminapp:errors"/>
+            </p>
+        </div>
+        <h3>Add a new editor</h3>
+        <div class="well well-sm">
+            <form action="create_editor.xql" method="POST" class="form form-inline">
+                <div class="form-group">
+                    <label class="sr-only" for="username">Username:</label>
+                    <input name="username" type="text" class="templates:form-control form-control" placeholder="username" required="required"/>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="fullname">Name and Surname:</label>
+                    <input required="required" name="fullname" type="text" class="templates:form-control form-control" placeholder="First name and surname"/>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="email">Email:</label>
+                    <input required="required" name="description" type="email" class="templates:form-control form-control" placeholder="email"/>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="password">Password:</label>
+                    <input name="password" type="text" class="templates:form-control form-control" placeholder="password" required="required"/>
+                </div>
+                <button id="f-btn-adduser" type="submit" class="btn btn-primary">
+                        Create <span class="glyphicon glyphicon-user"/>
+                </button>
+                <img class="hide" id="loading-image" style="width:40px" src="resources/img/ringred.gif"/>
+            </form>
+        </div>
+        <h3>Assign collections</h3>
+        <table class="table table-striped">
+            <tbody data-template="adminapp:list-editors"/>
+        </table>
+    </section>
+</div>

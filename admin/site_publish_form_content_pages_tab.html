@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div>
+    <span data-template="adminapp:site-model">
+        <div data-template="adminapp:site-form-content-pages-tab"/>
+        <script>
+    $(document).ready(function() {
+        
+        //1) Tabfy the two blocks: Structure and Contents
+
+       // $('body').find('#site_form_content_box .tabfy').tabfy('h3');
+        
+        var default_lang=$('#settings').data('default_lang');
+        var pages_setted=$('#settings').data('pages').split(" ");
+        
+        //PAGES TAB
+        //Set default position for the pages tab
+        pages_tab_default(default_lang);
+        //Check on the options menu the setted pages
+        //If the menu voice is setted then clone to #menu_built list and hide from #menu_options 
+        $("body").find("#menu_options li").each(function(){
+            var name= $(this).data('name');
+            //console.log(name)
+            if(pages_setted.indexOf(name)!= -1){
+                $(this).hide();
+            }
+   
+        });
+        
+        $('#menu_built li').find('.pages_checkbox').attr('checked','checked');
+        
+        //make_browse_items_readonly(default_lang);
+        //make_citation_items_readonly(default_lang)
+        
+        //Make the two lists connected and sortable    
+        $( "#menu_options,#menu_built" ).sortable({ 
+            connectWith: ".connectedSortable"
+        }).disableSelection();
+        
+        $( "#menu_options" ).sortable({
+            cancel: ".list-group-item"
+        });
+        
+        //When page loads push the title at the top of every content box
+        $('.edit-area .form-group').each(function(){edit_box_title(this)}); 
+
+        //When page loads set summernote for page content textareas
+        load_summernote('body','textarea.content-textarea.saved');
+        //Load a lite verion of summernote for the footer
+        load_summernote_light('body','.footer_textarea.saved'); 
+        
+
+        //When page loads set tablesctipt for tables
+        tables_script('body','textarea.table-textarea.saved');
+
+        //Manage up down arrows for page parts
+         up_down_manage();
+
+        /*
+        
+        //var languages=$('#settings').data('languages').split(" ");
+        var pages_setted=$('#settings').data('pages').split(" ");
+        
+
+        //METADATA TAB
+        //Set default position for metadata tab
+        tab_default('Metadata',default_lang);
+        
+        
+        
+        //FOOTER TAB
+        //Set default position for Footer tab
+        tab_default('Footer',default_lang); 
+        
+        //Check on the options menu the setted pages
+        //If the menu voice is setted then clone to #menu_built list and hide from #menu_options 
+        $("body").find("#menu_options li").each(function(){
+            var name= $(this).data('name');
+            //console.log(name)
+            if(pages_setted.indexOf(name)!= -1){
+                $(this).hide();
+            }
+   
+        });
+        
+        $('#menu_built li').find('.pages_checkbox').attr('checked','checked');
+        
+        make_browse_items_readonly(default_lang)
+        
+        //Make the two lists connected and sortable    
+        $( "#menu_options,#menu_built" ).sortable({ 
+            connectWith: ".connectedSortable"
+        }).disableSelection();
+        
+        $( "#menu_options" ).sortable({
+            cancel: ".list-group-item"
+        });
+        
+        //When page loads push the title at the top of every content box
+        $('.edit-area .form-group').each(function(){edit_box_title(this)}); 
+
+        //When page loads set summernote for page content textareas
+        load_summernote('body','textarea.content-textarea.saved');
+        //Load a lite verion of summernote for the footer
+        load_summernote_light('body','.footer_textarea.saved'); 
+        
+
+        //When page loads set tablesctipt for tables
+        tables_script('body','textarea.table-textarea.saved');
+
+        //Manage up down arrows for page parts
+         up_down_manage();
+        
+        //When page loads set data-lang as default_lang in footer add button
+        $('#footer_add_column').data('lang', default_lang).attr('data-lang',default_lang);*/     
+
+   
+        
+    });
+    
+
+    
+    </script>
+    </span>
+</div>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="templates:surround?with=templates/page.html&amp;at=content">
+    <!--div data-template="app:collection-form">
+        <span data-template="app:collection-mindate"/>
+        <span data-template="app:collection-maxdate"/>
+    </div-->
+    <div data-template="app:document-form" data-template-interface="editor">
+        <section class="content-header">
+            <h1 style="text-transform: capitalize;">
+                Release document
+            </h1>
+        </section>
+        <section id="document-form-section" class="content">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p>In questa sezione è possibile CONSEGNARE il documento all'Editor in chief, egli potrà apporovarlo per la pubblicazione oppure reinoltrerlo all'Editor per ulteriori verifiche</p>
+                    <span data-template="app:validate-document"/>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+$(document).ready(function() {
+
+});    
+    </script>
+</div>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+    <head>
+        <title data-template="config:app-title">App Title</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+        <meta data-template="config:app-meta"/>
+        <link rel="shortcut icon" href="../resources/img/logo.png"/>
+        <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap-337.min.css"/>
+        <script type="text/javascript" src="../resources/scripts/bootstrap-337.min.js"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
+    </head>
+    <body class="login-page" style="background-color:#FFA500">
+        <div style="position:absolute; top:20px; left:40px">
+            <img src="../resources/img/spider.png" style="width:150px;" alt="Aracne Framework" class="img-responsive"/>
+        </div>
+        <div class="container text-center">
+            <div style="width:40%; margin:0 auto">
+                <h1 data-template="config:app-title" class="text-center">App Title</h1>
+                <form action="index.html" method="post" data-template="mainapp:form-action-to-current-url">
+                    <div class="form-group">
+                        <input type="text" name="user" class="form-control" placeholder="User ID" autofocus="autofocus"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Password"/>
+                    </div>
+                    <input type="hidden" name="duration" value="P7D"/>
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign me in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

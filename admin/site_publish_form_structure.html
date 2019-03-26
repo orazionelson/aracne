@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="flow">
+    <style>
+.themes ul {
+  list-style-type: none;
+}
+
+.themes li {
+  display: inline-block;
+}
+
+.themes input[type="radio"] {
+  display: none;
+}
+
+.themes label {
+  border: 1px solid #fff;
+  padding: 5px;
+  display: block;
+  position: relative;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.themes label:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid grey;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+.themes label img {
+  width: 200px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+.themes :checked + label {
+  border-color: red;
+}
+
+.themes :checked + label:before {
+  content: "✓";
+  background-color: grey;
+  transform: scale(1);
+}
+
+.themes :checked + label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+  z-index: -1;
+}
+    
+</style>
+    <span data-template="adminapp:site-publish-form-structure"/>
+    <script>
+    $(document).ready(function() {
+        
+       
+    });    
+</script>
+</div>

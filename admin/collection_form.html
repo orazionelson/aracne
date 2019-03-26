@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="templates:surround?with=templates/page.html&amp;at=content">
+    <div data-template="mainapp:collection-form">
+        <section class="content-header">
+            <h1 style="text-transform: capitalize;">
+                <span data-template="adminapp:collection-form-case"/> collection
+            </h1>
+        </section>
+        <section id="collection-form-section" class="content">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <form id="collection-form" action="collection_form.xql" method="POST" class="form">
+                        <span data-template="adminapp:collection-form-input-case"/>
+                        <span data-template="adminapp:collection-form-input-id"/>
+                        <span data-template="adminapp:collection-form-input-status"/>
+                        <span data-template="adminapp:collection-generic-form-input" data-template-field="ctitle" data-template-required="true"/>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span data-template="adminapp:collection-generic-form-input" data-template-field="docnum" data-template-type="number"/>
+                            </div>
+                            <div class="col-md-3">
+                                <span data-template="adminapp:collection-generic-form-input" data-template-field="from" data-template-type="number"/>
+                            </div>
+                            <div class="col-md-3">
+                                <span data-template="adminapp:collection-generic-form-input" data-template-field="to" data-template-type="number"/>
+                            </div>
+                            <!--div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="type">Tipo:</label>
+                                    <span data-template="app:collection-form-select-type"/>
+                                </div>
+                            </div-->
+                        </div>
+                        <hr/>
+                        <div>
+                            <span data-template="adminapp:collection-generic-form-input" data-template-field="main_editor" data-template-required="true"/>
+                            <span data-template="adminapp:collection-generic-form-input" data-template-field="main_source"/>
+                            <span data-template="adminapp:collection-generic-form-input" data-template-field="publisher"/>
+                        </div>
+                        <button id="f-btn-collection" type="submit" class="btn btn-primary">
+                    Save <span class="glyphicon glyphicon-folder-open"/>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

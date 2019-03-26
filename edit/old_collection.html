@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
+    <section class="content-header">
+        <h1>Collection</h1>
+        <h4 data-template="app:collectiontitle"/>
+    </section>
+    <p>
+        <div data-template="app:button_create_document"/>
+    </p>
+    <section id="collection" class="content">
+        <table id="collection_data" data-page-length="30" data-aa-sorting="[]" class="table table-striped data-table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Titolo</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div data-template="app:collection-list-docs"/>
+            </tbody>
+        </table>
+    </section>
+    <script>
+        $(document).ready(function() {
+            $('#collection_data').DataTable({
+                columnDefs: [{ targets: 0, searchable: false }, ],
+                "oLanguage": {"sSearch": "Filtra per testo libero:"},
+                });
+
+        });
+        </script>
+</div>

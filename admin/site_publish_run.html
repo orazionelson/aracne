@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="templates:surround?with=templates/page.html&amp;at=content">
+    <section class="content-header">
+        <h1>
+            Site Publish Run
+        </h1>
+    </section>
+    <section id="siteXml" class="content">
+        <p class="lead">You are going to publish a website based on the collection:
+            <strong>
+                <span data-template="mainapp:collection-title"/>
+            </strong>
+        </p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="well well-default">
+                    <div data-template="adminapp:site-resume-info"/>
+                </div>
+            </div>
+            <div class="col-md-8" id="response">
+                <p class="intro" style="display:none">Building <span data-template="mainapp:collection-title"/>
+                </p>
+                <p class="site build step one"/>
+                <p class="site build step two"/>
+                <p class="site build step three"/>
+                <p class="site build step four"/>
+                <p class="site build step five"/>
+                <p class="site build step six"/>
+                <p class="site build step seven"/>
+                <p class="site build step eight"/>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="../resources/scripts/site_publish_run.js"/>
+    <script>
+        $(document).ready(function() {
+            //$('.step').append('<img class="spinner" src="../resources/img/ringred.gif" alt="loader"/>').hide();
+            $('#create_site').on('click',function(e){
+                e.preventDefault();
+                $('.step').empty().append('<img class="spinner" src="../resources/img/ringred.gif" alt="loader"/>');
+                $('#response .intro').fadeIn();
+                //var target = $(this).attr('href');
+                //alert(target);
+                var myid=$(this).data('id');
+               
+                //alert('pippo')
+                 deferredPost(0, 7,myid);
+            });
+        });
+
+   
+    //declare your function to run AJAX requests
+   
+    //run the AJAX function for the first time once `document.ready` fires
+   
+
+        
+    </script>
+</div>

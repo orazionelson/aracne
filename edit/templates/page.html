@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+    <head>
+        <title data-template="config:app-title">App Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta data-template="config:app-meta"/>
+        <link rel="shortcut icon" href="../resources/img/logo.png"/>
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap-337.min.css"/>
+        <!--AdminLTE css-->
+        <link rel="stylesheet" type="text/css" href="../resources/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../resources/css/ionicons.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../resources/css/ion.rangeSlider.css"/>
+        <link rel="stylesheet" type="text/css" href="../resources/css/ion.rangeSlider.skinFlat.css"/>
+        <link rel="stylesheet" type="text/css" href="../resources/css/AdminLTE.css"/>
+        <link rel="stylesheet" type="text/css" href="../resources/css/skin-black.min.css"/>
+        <!--DataTables css-->
+        <link rel="stylesheet" type="text/css" href="../resources/css/dataTables.bootstrap.min.css"/>
+        <!--Codemirror css-->
+        <link rel="stylesheet" type="text/css" href="../resources/css/codemirror.css"/>
+        <link rel="stylesheet" type="text/css" href="../resources/cm_addon/hint/show-hint.css"/>
+        <!--TODO: buttons for CM: link rel="stylesheet" href="$shared/resources/cm_addon/display/fullscreen.css"/-->
+        
+        <!--Jquery UI CSS -->
+        <link rel="stylesheet" type="text/css" href="../resources/scripts/jquery-ui/1.12.1/jquery-ui.css"/>
+        <link rel="stylesheet" type="text/css" href="../resources/scripts/jquery-ui/1.12.1/jquery-ui.structure.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../resources/scripts/jquery-ui/1.12.1/jquery-ui.theme.min.css"/>
+        
+        <!--Aracne Editor CSS-->
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
+        
+        <!--JS-->
+        <script type="text/javascript" src="../resources/scripts/jquery-3.2.1.min.js"/>
+        <script type="text/javascript" src="../resources/scripts/fastclick.min.js"/>
+        
+        <!--ADMINLte-->
+        <script type="text/javascript" src="../resources/scripts/adminlte.js"/>
+        
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="../resources/scripts/bootstrap-337.min.js"/>
+
+        <!-- DataTables -->
+        <script type="text/javascript" src="../resources/scripts/jquery.dataTables.min.js"/>
+        <script type="text/javascript" src="../resources/scripts/dataTables.bootstrap.min.js"/>
+        <script type="text/javascript" src="//cdn.datatables.net/plug-ins/1.10.13/sorting/natural.js"/>
+        
+        <!--Codemirror-->
+        <script type="text/javascript" src="../resources/scripts/codemirror.js"/>
+        
+        <!-- Codemirror hints -->
+        <script type="text/javascript" src="../resources/cm_addon/hint/show-hint.js"/>
+        <script type="text/javascript" src="../resources/cm_addon/hint/xml-hint.js"/>
+        <script type="text/javascript" src="../resources/scripts/xml.js"/>
+        <script type="text/javascript" src="../resources/cm_addon/selection/active-line.js"/>
+        <!--script type="text/javascript" src="../resources/cm_addon/display/fullscreen.js"/-->
+        <!--script type="text/javascript" src="../resources/cm_addon/edit/closetag.js"/-->
+        <!--script type="text/javascript" src="../resources/cm_addon/panel/panel.js"/>
+        <script type="text/javascript" src="../resources/cm_addon/buttons/buttons.js"/-->
+        <script type="text/javascript" src="../resources/scripts/vkbeautify.js"/>
+        
+        <!-- Codemirror for css editor >
+        <script type="text/javascript" src="../resources/scripts/css.js"/>
+        <script type="text/javascript" src="../resources/cm_addon/hint/css-hint.js"/ -->
+        
+        <!--Codemirror for js editor >
+        <script type="text/javascript" src="../resources/cm_addon/edit/matchbrackets.js"/>
+        <script type="text/javascript" src="../resources/cm_addon/comment/continuecomment.js"/>
+        <script type="text/javascript" src="../resources/cm_addon/comment/comment.js"/>
+        <script type="text/javascript" src="../resources/scripts/javascript.js"/>
+        <script type="text/javascript" src="../resources/cm_addon/hint/javascript-hint.js"/-->
+        
+        <!--jquery UI -->
+        <script type="text/javascript" src="../resources/scripts/jquery-ui/1.12.1/jquery-ui.min.js"/>
+        
+        <!--Aracne plugins-->
+        <script type="text/javascript" src="../resources/scripts/plugins.js"/>
+        
+        <!--Summernote editor-->
+        <link href="../resources/scripts/summernote/summernote.css" rel="stylesheet" type="text/css"/>
+        <script src="../resources/scripts/summernote/summernote.js" type="text/javascript"/>
+    </head>
+    <body id="body" class="skin-black">
+        <div class="wrapper">
+            <header class="main-header">
+                <a href="index.html" class="logo">
+                    <img src="../resources/img/logo.png" class="icon" alt="logo" height="40" style="margin-top:5px; margin-right:5px;"/>
+                </a>
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <h1>
+                                <span data-template="config:app-title"/>
+                            </h1>
+                        </li>
+                    </ul>
+                    <div class="navbar-custom-menu">
+                        <a href="?logout=true" class="btn btn-default btn-flat pull-right">Log out</a>
+                    </div>
+                </nav>
+            </header>
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                    <ul class="sidebar-menu" data-template="mainapp:active-panel">
+                        <li class="treeview">
+                            <a href="index.html">
+                                <i class="fa fa-book"/>
+                                <span>Assigned Collections</span>
+                            </a>
+                            <ul class="treeview-menu" data-template="editapp:assigned-to-editor-sidebar"/>
+                        </li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+            <div id="content" class="content-wrapper"/>
+        </div>
+        <footer style="border-top:4px solid #000; height:40px">
+            <a class="poweredby pull-right" href="http://exist-db.org">
+                <img src="../resources/images/powered-by.svg" height="40px" alt="Powered by eXist-db"/>
+            </a>
+        </footer>
+    </body>
+</html>

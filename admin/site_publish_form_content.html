@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div>
+    <span data-template="adminapp:site-model">
+        <div data-template="adminapp:site-form-content"/>
+        <script>
+    $(document).ready(function() {
+        
+        //1) Tabfy the two blocks: Structure and Contents
+
+        $('body').find('#site_form_content_box .tabfy').tabfy('h3');
+        var default_lang=$('#settings').data('default_lang');
+        var id=$('#settings').data('id');
+        //var languages=$('#settings').data('languages').split(" ");
+
+        //$("body").one('click',
+        $("body a.Pagestab").ready(function(){
+            //e.preventDefault();
+            $("#site-form-content-pages-tab").load('site_publish_form_content_pages_tab.html?id='+id);    
+            
+        });
+
+        //METADATA TAB
+        //Set default position for metadata tab
+        tab_default('Metadata',default_lang);
+        
+        
+        
+        //FOOTER TAB
+        //Set default position for Footer tab
+        tab_default('Footer',default_lang); 
+        
+                
+        //When page loads set data-lang as default_lang in footer add button
+        $('#footer_add_column').data('lang', default_lang).attr('data-lang',default_lang);     
+
+   
+        
+    });    
+    </script>
+    </span>
+</div>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div data-template="adminapp:setup-interface">
+    <form id="xml-form" action="setup-save-xml.xql" method="POST" class="form">
+        <span data-template="adminapp:setup-interface-input"/>
+        <!-- Hidden fields-->
+        <!--span datatemplate="mainapp:document-form-input-case"/-->
+        <span data-template="adminapp:setup-interface-textarea"/>
+        <button id="xml-form-button" type="submit" class="btn btn-primary">Save <span class="glyphicon glyphicon-file"/>
+        </button>
+    </form>
+    <!--script type="text/javascript" src="../resources/scripts/document_form.js"/-->
+    <script type="text/javascript" src="../resources/scripts/cm-tei-schema.js"/>
+    <script type="text/javascript" src="../resources/scripts/xmleditor.js"/>
+</div>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
+    <section class="content-header">
+        <h2>Manage Collection: <span data-template="mainapp:collection-title"/>
+        </h2>
+        <div class="well well-sm">
+            <p class="lead">Owner: <span data-template="mainapp:collection-owner"/>; documents extimated:  <span data-template="mainapp:collection-docnum"/>
+            </p>
+            <div class="row">
+                <div class="col-md-4"/>
+                <div class="col-md-4">
+                    <div data-template="adminapp:collection-build-button"/>
+                </div>
+                <div class="col-md-4">
+                    <div data-template="mainapp:collection-stats"/>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="collection" class="content">
+        <table id="collection_data" data-page-length="30" data-order="[[ 0, &#34;asc&#34; ]]" class="table table-striped data-table">
+            <thead>
+                <tr>
+                    <th>Doc Id</th>
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div data-template="mainapp:collection-list-docs" data-template-interface="admin"/>
+            </tbody>
+        </table>
+    </section>
+    <script>
+        $(document).ready(function() {
+            $('#collection_data').DataTable({
+                columnDefs: [
+                            { targets: 0, type: 'natural', searchable: false },
+                            { targets: 3, orderable: false },
+                            ],
+                "oLanguage": {"sSearch": "Free text filter:"},
+                });
+
+        });
+        </script>
+</div>

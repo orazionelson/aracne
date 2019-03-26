@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="templates:surround?with=templates/page.html&amp;at=content">
+    <span data-template="adminapp:site-model">
+        <div id="res"/>
+        <span data-template="adminapp:site-header"/>
+        <span data-template="adminapp:site-ajax-settings"/>
+        <div class="text-center">
+            <span data-template="adminapp:snippet-site-structure-contents-buttons"/>
+        </div>
+        <div>
+            <div id="site_form_structure_box" class="site_form_box" style="margin:30px">
+                <span data-template="adminapp:site-form-structure"/>
+            </div>
+            <div id="site_form_content_box" class="site_form_box" style="margin:30px; display:none">
+                <!--Called by ajax: div datatemplate="adminapp:site-form-content"/-->
+            </div>
+        </div>
+        <!--Block prototypes-->
+        <div id="prototypes">
+            <div id="edit-bar-prototype">
+                <span data-template="adminapp:snippet-edit-bar"/>
+            </div>
+            <div id="footer-edit-bar-prototype">
+                <span data-template="adminapp:snippet-footer-edit-bar"/>
+            </div>
+            <div class="proto paragtitle">
+                <div class="panel panel-default form-group multiLang block">
+                    <div class="form-group multilangInput">
+                        <label class="control-label">Paragraph Title</label>
+                        <div class="input-group defaultLang">
+                            <div class="input-group-addon">
+                                <img class="defaultLangImg" src="../resources/assets/lang/default_lang.png"/>
+                            </div>
+                            <input type="text" class="form-control nest" name="paragtitle" value="Paragraph title"/>
+                        </div>
+                        <div class="otherLangs"/>
+                    </div>
+                    <p class="editarea-box-title">Paragraph title</p>
+                    <div class="clearfix"/>
+                </div>
+            </div>
+            <div class="proto citation">
+                <div class="panel panel-default form-group singleLang block">
+                    <label class="col-sm-1 control-label" for="citation_citkey" style="padding-right:0">Key</label>
+                    <div class="col-sm-1" style="padding-left:0">
+                        <input type="text" name="citation_citkey" class="form-control col-sm-1" value="key" style="padding:0"/>
+                    </div>
+                    <label class="col-sm-1 control-label" for="citation_cititem" style="padding-right:0">Citation</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="citation_cititem" class="form-control col-sm-8 nest" value="item"/>
+                        <p class="editarea-box-title">
+                            <strong>Citation</strong>
+                        </p>
+                    </div>
+                    <div class="clearfix"/>
+                </div>
+            </div>
+            <div class="proto textarea">
+                <div class="panel panel-default form-group multiLang block">
+                    <div class="form-group multilangTextarea">
+                        <ul class="nav nav-pills">
+                            <li class="active defaultLangPill">
+                                <a data-toggle="pill" href="#">
+                                    <img class="defaultLangImg" src="../resources/assets/lang/default_lang.png"/>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="" class="tab-pane fade in active defaultLangContent">
+                                <textarea class="content-textarea form-control nest defaultLang" rows="8" name="textarea">Content</textarea>
+                            </div>
+                        </div>
+                        <p class="editarea-box-title">
+                            <strong>Paragraph content</strong>
+                        </p>
+                    </div>
+                    <div class="clearfix"/>
+                </div>
+            </div>
+            <div class="proto table">
+                <div class="panel panel-default form-group multiLang block">
+                    <div class="form-group multilangTable">
+                        <ul class="nav nav-pills">
+                            <li class="active defaultLangPill">
+                                <a data-toggle="pill" href="#">
+                                    <img class="defaultLangImg" src="../resources/assets/lang/default_lang.png"/>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="" class="tab-pane fade in active defaultLangContent">
+                                <textarea class="table-textarea nest defaultLang hidden" name="table">
+                        [
+                        [ {"val":"head 1"}, {"val":"head 2"}, {"val":"head 3","settings":{"class":"danger"}} ],
+                        [ {"val":"value"}, {"val":"value"}, {"val":"value","settings":{"class":"warning"}} ],
+                        [ {"val":"value"}, {"val":"value"}, {"val":"value","settings":{"class":"warning"}} ]
+                        ]
+                        </textarea>
+                            </div>
+                        </div>
+                        <p class="editarea-box-title">
+                            <strong>Table</strong>
+                        </p>
+                    </div>
+                    <div class="clearfix"/>
+                </div>
+            </div>
+            <div class="proto browse">
+                <div class="panel panel-default form-group mixedLangs block">
+                    <div class="form-group multilangInput">
+                        <label class="control-label">Label</label>
+                        <div class="input-group defaultLang">
+                            <div class="input-group-addon">
+                                <img class="defaultLangImg" src="../resources/assets/lang/default_lang.png"/>
+                            </div>
+                            <input type="text" class="form-control" name="fieldLabel" value=""/>
+                        </div>
+                        <div class="otherLangs"/>
+                    </div>
+                    <div class="cluster">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>fieldName</label>
+                                <input class="form-control" name="fieldName" type="text" value=""/>
+                            </div>
+                            <div class="col-md-4">
+                                <label>lucene-index-query</label>
+                                <input class="form-control" name="lucene-index-query" type="text" value=""/>
+                            </div>
+                            <div class="col-md-4">
+                                <label>lucene-index-type</label>
+                                <input class="form-control" name="lucene-index-type" type="text" value=""/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>lucene-index-analyzer</label>
+                                <input class="form-control" name="lucene-index-analyzer" type="text" value=""/>
+                            </div>
+                            <div class="col-md-4">
+                                <label>target</label>
+                                <input class="form-control" name="target" type="text" value=""/>
+                            </div>
+                            <div class="col-md-4">
+                                <label>node</label>
+                                <input class="form-control" name="node" type="text" value=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="editarea-box-title">
+                        <strong>Browse by:</strong>
+                    </p>
+                    <div class="clearfix"/>
+                </div>
+            </div>
+            <div id="menu_prototype">
+                <span data-template="adminapp:site-get-menu-structure"/>
+            </div>
+        </div>
+    </span>
+    <link rel="stylesheet" href="../resources/css/tableEdit.css"/>
+    <script src="../resources/scripts/tableEdit/core.js"/>
+    <script src="../resources/scripts/tableEdit/create_table.js"/>
+    <script src="../resources/scripts/tableEdit/controllers_table.js"/>
+    <script src="../resources/scripts/tableEdit/events_table.js"/>
+    <script src="../resources/scripts/tableEdit/callbacks_bootstrap_modal.js"/>
+    <script src="../resources/scripts/tableEdit/callbacks_define_types.js"/>
+    <script type="text/javascript" src="../resources/scripts/site_publish_form.js"/>
+    <script>
+    $(document).ready(function() {
+        //$('body').find('.css_textarea').each(function(index, myeditor) {
+            //console.log($(this).attr('id'));
+            //myeditor.value = vkbeautify.xml(myeditor.value);
+            //console.log(myeditor);
+            var css_editor = CodeMirror.fromTextArea(document.getElementById("site_css"), {
+                mode: 'text/css',
+                /*theme: 'eclipse',*/
+                lineNumbers: true,
+                lineWrapping: true,
+                matchBrackets: true,
+                cursorBlinkRate: 1000,
+                styleActiveLine: true,
+                extraKeys: {"Ctrl-Space": "autocomplete"}
+            });
+            //Thrigger with bootstrap tab change
+            $('a[aria-controls="CSS"]').on('shown.bs.tab', function(e) {
+                setTimeout(function() {
+                css_editor.refresh();
+                }, 1);
+
+            });
+
+            var js_editor = CodeMirror.fromTextArea(document.getElementById("site_js"), {
+                mode: 'text/javascript',
+                /*theme: 'eclipse',*/
+                lineNumbers: true,
+                lineWrapping: true,
+                matchBrackets: true,
+                cursorBlinkRate: 1000,
+                styleActiveLine: true,
+                continueComments: "Enter",
+                extraKeys: {"Ctrl-Q": "toggleComment","Ctrl-Space": "autocomplete"}
+            });
+            //Thrigger with bootstrap tab change
+            $('a[aria-controls="JS"]').on('shown.bs.tab', function(e) {
+                setTimeout(function() {
+                js_editor.refresh();
+                }, 1);
+
+            });            
+            
+            
+        //});
+    });
+    </script>
+</div>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="templates:surround?with=templates/page.html&amp;at=content">
+    <div data-template="app:collection-form">
+        <section class="content-header">
+            <h1>
+                <span data-template="app:collection-form-case"/>
+            </h1>
+        </section>
+        <section id="collection-form-section" class="content">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <form id="collection-form" action="create_collection.xql" method="POST" class="form">
+                        <span data-template="app:collection-form-id"/>
+                        <span data-template="app:collection-form-input" data-template-field="ctitle" data-template-required="true"/>
+                        <span data-template="app:collection-form-input" data-template-field="docnum"/>
+                        <span data-template="app:collection-form-input" data-template-field="from"/>
+                        <span data-template="app:collection-form-input" data-template-field="to"/>
+                        
+                    <!--div class="form-group">
+                        <label for="id">Id:</label>*
+                    <span data-template="app:create_collection_id"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="ctitle">Title:</label>*
+                    <input name="ctitle" type="text" class="templates:form-control form-control" placeholder="Title" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="docnum">Number of documents:</label>
+                        <input name="docnum" type="text" class="templates:form-control form-control" placeholder="Number of documents"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="from">From:</label>
+                        <input name="from" type="text" class="templates:form-control form-control" placeholder="From"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="to">To:</label>
+                        <input name="to" type="text" class="templates:form-control form-control" placeholder="To"/>
+                    </div-->
+                        <hr/>
+                        <div>
+                            <h3>Metadati dell'edizione elettronica</h3>
+                            <div class="form-group">
+                                <label for="fileDesc_titleStmt_respStmt_name">A cura di</label>
+                                <input name="fileDesc_titleStmt_respStmt_name" type="text" class="templates:form-control form-control" placeholder="A cura di" value="Roberto Delle Donne"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="source">Fonte della trascrizione</label>
+                                <input name="source" type="text" class="templates:form-control form-control" placeholder="Source"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="fileDesc_publicationStmt_publisher">Publisher:</label>
+                                <input name="fileDesc_publicationStmt_publisher" type="text" class="templates:form-control form-control" placeholder="Publisher" value="Università degli Studi di Napoli - Federico II"/>
+                            </div>'
+                    </div>
+                        <button id="f-btn-collection" type="submit" class="btn btn-primary">
+                    Save <span class="glyphicon glyphicon-folder-open"/>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
+    <section class="content-header">
+        <h1>Collection</h1>
+        <div class="well well-sm">
+            <p class="lead">Owner: <span data-template="mainapp:collection-owner"/>; documents extimated:  <span data-template="mainapp:collection-docnum"/>
+            </p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div data-template="editapp:button-create-document"/>
+                </div>
+                <div class="col-md-4">
+                    <div data-template="editapp:button-release-collection"/>
+                </div>
+                <div class="col-md-4">
+                    <div data-template="mainapp:collection-stats"/>
+                </div>
+            </div>
+        </div>
+        <h3>
+            <span data-template="mainapp:collection-title"/>
+        </h3>
+    </section>
+    <section id="collection" class="content">
+        <table id="collection_data" data-page-length="30" data-order="[[ 0, &#34;asc&#34; ]]" class="table table-striped data-table">
+            <thead>
+                <tr>
+                    <th>Doc Id</th>
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div data-template="mainapp:collection-list-docs" data-template-interface="editor"/>
+            </tbody>
+        </table>
+    </section>
+    <script>
+        $(document).ready(function() {
+            $('#collection_data').DataTable({
+                columnDefs: [
+                            { targets: 0, type: 'natural' },
+                            { targets: 3, orderable: false }
+                            ],
+                "oLanguage": {"sSearch": "Free text filter:"},
+                });
+        $('.release-document').on('click', function(e){
+            e.preventDefault();
+            var data={};
+            data['id'] = $(this).data('id');
+            data['docid'] = $(this).data('docid');
+            //href="release_form.html?id={$id}&amp;docid={$dname}"
+            //alert('pippo');
+            var actions_box=$(this).closest('.actions');
+            $(this).closest('.actions').empty().append('<span>
+            <img style="width:30px;" src="resources/img/ringred.gif"/>
+        </span>');
+            $('.release-button').empty().append('<span>
+            <img style="width:30px;" src="resources/img/ringred.gif"/>
+        </span>');
+            
+            $.ajax({
+            url: "document_release.html",
+            method: "POST",
+            data : data,
+            //data: { id: "ara3", docid: "ara3.6.xml"} ,
+                //parts: JSON.stringify(scorez) },
+            cache: false
+            })
+        .done(function( html ) {
+            //
+           
+            $( actions_box ).empty().append( $(html).find('.release_document') );
+            //$( actions_box ).find('.release_button_box')
+            //var release_button_box=$(html).find('.release-button-box');
+            $('.release-button').empty().append($(html).find('.release_button_box'));
+            
+            
+            //console.log(html)
+            //score='1';
+            //scores.push(html)
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+                        
+            /*var nmyid = "XX"; //myid.substr(myid.lastIndexOf("_") + 1);
+            var content = $(jqXHR.responseText).find("#content pre.error").html();
+            var decodedContent = $('<span/>').html(content).text();
+            var message = $(decodedContent).find("message").html();*/
+            //var valid= message.substr(0, message.indexOf('Validated')); 
+            
+            //console.log(validation);
+            var error = '<div data-score="1" class="text-danger">error</div>';
+            $( actions_box ).append( error );
+            
+        });
+            
+            
+            });
+            
+            
+        });
+        </script>
+</div>
